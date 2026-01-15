@@ -1,0 +1,67 @@
+[
+  {
+    "id": "major_0",
+    "name": "The Fool",
+    "arcana": "major",
+    "suit": null,
+    "number": 0,
+    "archetype": "The New Beginning",
+    "keywords": {
+      "upright": ["Innocence", "New Beginnings", "Free Spirit"],
+      "reversed": ["Recklessness", "Taken Advantage Of", "Inconsiderate"]
+    },
+    "situational_tags": ["start", "adventure", "risk", "unknown"]
+  },
+  {
+    "id": "major_1",
+    "name": "The Magician",
+    "arcana": "major",
+    "suit": null,
+    "number": 1,
+    "archetype": "The Manifestor",
+    "keywords": {
+      "upright": ["Willpower", "Desire", "Creation", "Manifestation"],
+      "reversed": ["Trickery", "Illusions", "Out of Touch"]
+    },
+    "situational_tags": ["action", "power", "skill", "resourcefulness"]
+  },
+  {
+    "id": "major_2",
+    "name": "The High Priestess",
+    "arcana": "major",
+    "suit": null,
+    "number": 2,
+    "archetype": "The Intuitive",
+    "keywords": {
+      "upright": ["Intuition", "Unconscious", "Inner Voice"],
+      "reversed": ["Lack of Center", "Lost Inner Voice", "Repressed Feelings"]
+    },
+    "situational_tags": ["mystery", "subconscious", "wisdom", "passive"]
+  },
+  {
+    "id": "cups_ace",
+    "name": "Ace of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 1,
+    "archetype": "Emotional Overflow",
+    "keywords": {
+      "upright": ["Love", "New Relationships", "Compassion"],
+      "reversed": ["Self Loven", "Repressed Emotions"]
+    },
+    "situational_tags": ["love", "relationship", "emotion", "feeling"]
+  },
+  {
+    "id": "pentacles_10",
+    "name": "Ten of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 10,
+    "archetype": "Wealth",
+    "keywords": {
+      "upright": ["Wealth", "Inheritance", "Family"],
+      "reversed": ["Financial Failure", "Loneliness"]
+    },
+    "situational_tags": ["money", "career", "legacy", "home"]
+  }
+]

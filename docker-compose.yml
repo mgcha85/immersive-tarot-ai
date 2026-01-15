@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: immersive-tarot-backend:latest
+    container_name: tarot-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=sqlite:/data/tarot.db
+      - RUST_LOG=info
+    volumes:
+      - tarot-data:/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: immersive-tarot-frontend:latest
+    container_name: tarot-frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  tarot-data:
