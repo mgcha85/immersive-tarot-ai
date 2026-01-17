@@ -1,69 +1,226 @@
 <script lang="ts">
     import { T, useTask, useThrelte } from "@threlte/core";
-    import { RigidBody, Collider, AutoColliders } from "@threlte/rapier";
-    import { Vector3, Raycaster } from "three";
-    import type { RigidBody as RapierRigidBody } from "@dimforge/rapier3d-compat";
+    import { Vector3, Vector2, Raycaster, Plane, MathUtils, Euler, Quaternion, Mesh, MeshStandardMaterial, Color } from "three";
+    import { onMount, createEventDispatcher } from "svelte";
 
-    const { camera, scene, renderer } = useThrelte();
+    const dispatch = createEventDispatcher();
+    const { camera, scene } = useThrelte();
 
-    let rigidBody: RapierRigidBody;
-    const vec3 = new Vector3();
-    const mouse = { x: 0, y: 0 };
+    let handState = $state<'idle' | 'pointing' | 'grabbing'>('idle');
+    let hoveredCardId: string | null = null;
+    let hoveredCardMesh: Mesh | null = null;
+    
+    const targetPos = new Vector3(0, 2, 0);
+    const currentPos = new Vector3(0, 2, 0);
+    const currentRot = new Quaternion();
+    
+    let fingerCurl = $state(0);
+    let indexCurl = $state(0);
 
-    // Track mouse
+    const raycaster = new Raycaster();
+    const mouse = new Vector2();
+    const plane = new Plane(new Vector3(0, 1, 0), -2);
+    const intersectPoint = new Vector3();
+
+    // Highlighting Logic
+    const highlightColor = new Color("#ffaa00");
+    const noEmissive = new Color("#000000");
+
+    function setEmissive(mesh: Mesh, color: Color) {
+        if (!mesh.material) return;
+        if (Array.isArray(mesh.material)) {
+            mesh.material.forEach(m => {
+                if (m instanceof MeshStandardMaterial) {
+                    m.emissive.copy(color);
+                    m.emissiveIntensity = 0.5;
+                }
+            });
+        } else if (mesh.material instanceof MeshStandardMaterial) {
+            mesh.material.emissive.copy(color);
+            mesh.material.emissiveIntensity = 0.5;
+        }
+    }
+
     function onMouseMove(e: MouseEvent) {
         mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
     }
 
-    window.addEventListener("mousemove", onMouseMove);
+    function onMouseDown() {
+        handState = 'grabbing';
+        if (hoveredCardId) {
+            dispatch('select', { id: hoveredCardId });
+        }
+    }
 
-    useTask(() => {
-        if (!rigidBody || !$camera) return;
+    function onMouseUp() {
+        handState = hoveredCardId ? 'pointing' : 'idle';
+    }
 
-        // Project mouse to world at a fixed depth or intersection with table plane
-        // Simple approach: raycast to a virtual plane at y=2 or y=card_height
+    onMount(() => {
+        window.addEventListener("mousemove", onMouseMove);
+        window.addEventListener("mousedown", onMouseDown);
+        window.addEventListener("mouseup", onMouseUp);
+        return () => {
+            if (hoveredCardMesh) setEmissive(hoveredCardMesh, noEmissive);
+            window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("mousedown", onMouseDown);
+            window.removeEventListener("mouseup", onMouseUp);
+        };
+    });
 
-        vec3.set(mouse.x, mouse.y, 0.5);
-        vec3.unproject($camera);
+    useTask((delta) => {
+        if (!$camera) return;
 
-        const dir = vec3.sub($camera.position).normalize();
-        const distance = -$camera.position.y / dir.y; // Intersection with y=0 plane?
-        // Actually table is at y=-0.5. Cards are at ~0-2. Let's hover at y=2.
+        raycaster.setFromCamera(mouse, $camera);
+        
+        const interacts = raycaster.intersectObjects(scene.children, true);
+        const cardHit = interacts.find(hit => hit.object.userData.isCard);
 
-        // We want the hand to move on a plane roughly above the cards.
-        // Let's assume a plane at Z=0 for a top-down view?
-        // Camera is at [0, 10, 10] lookAt(0,0,0).
-        // Raycast to Ground Plane (y=0)
+        if (cardHit) {
+            const hitMesh = cardHit.object as Mesh;
+            if (hitMesh !== hoveredCardMesh) {
+                if (hoveredCardMesh) setEmissive(hoveredCardMesh, noEmissive);
+                hoveredCardMesh = hitMesh;
+                hoveredCardId = hitMesh.userData.cardId;
+                setEmissive(hoveredCardMesh, highlightColor);
+            }
+            
+            if (handState !== 'grabbing') {
+                handState = 'pointing';
+            }
+            targetPos.copy(cardHit.point).add(new Vector3(0, 1, 0));
+        } else {
+            if (hoveredCardMesh) {
+                setEmissive(hoveredCardMesh, noEmissive);
+                hoveredCardMesh = null;
+                hoveredCardId = null;
+            }
+            
+            if (handState !== 'grabbing') {
+                handState = 'idle';
+            }
+            raycaster.ray.intersectPlane(plane, intersectPoint);
+            targetPos.copy(intersectPoint);
+        }
 
-        // Logic:
-        // P = O + t*D
-        // Py = 0 => Oy + t*Dy = 0 => t = -Oy/Dy
+        const lerpFactor = 10 * delta;
+        currentPos.lerp(targetPos, lerpFactor);
+        
+        const velocity = new Vector3().copy(targetPos).sub(currentPos).multiplyScalar(5);
+        const tiltX = velocity.z * 0.5;
+        const tiltZ = -velocity.x * 0.5;
+        
+        const targetEuler = new Euler(tiltX, 0, tiltZ);
+        const targetQ = new Quaternion().setFromEuler(targetEuler);
+        currentRot.slerp(targetQ, lerpFactor);
 
-        // But wait, the camera might be angled.
-        // Let's blindly trust Raycaster on a virtual plane using Threejs math if needed,
-        // or just simplified projection if camera is static.
-        // Since we have OrbitControls, camera moves. We MUST use unproject + ray-plane intersection.
+        let targetIndexCurl = 0;
+        let targetOtherCurl = 0;
 
-        const targetY = 1.0; // Height of hand
-        const t = (targetY - $camera.position.y) / dir.y;
-        const targetPos = $camera.position.clone().add(dir.multiplyScalar(t));
+        if (handState === 'idle') {
+            targetIndexCurl = 0.1;
+            targetOtherCurl = 0.1;
+        } else if (handState === 'pointing') {
+            targetIndexCurl = 0;
+            targetOtherCurl = 1.2;
+        } else if (handState === 'grabbing') {
+            targetIndexCurl = 1.5;
+            targetOtherCurl = 1.5;
+        }
 
-        // Move KINEMATIC body to target
-        rigidBody.setNextKinematicTranslation({
-            x: targetPos.x,
-            y: targetPos.y,
-            z: targetPos.z,
-        });
+        indexCurl = MathUtils.lerp(indexCurl, targetIndexCurl, lerpFactor);
+        fingerCurl = MathUtils.lerp(fingerCurl, targetOtherCurl, lerpFactor);
     });
 </script>
 
-<RigidBody bind:rigidBody type="kinematicPosition">
-    <Collider shape="ball" args={[0.5]} />
-
-    <!-- Visual Hand (Sphere for now) -->
-    <T.Mesh castShadow>
-        <T.SphereGeometry args={[0.3]} />
-        <T.MeshStandardMaterial color="#ffccaa" transparent opacity={0.8} />
+<T.Group 
+    position={[currentPos.x, currentPos.y, currentPos.z]} 
+    quaternion={[currentRot.x, currentRot.y, currentRot.z, currentRot.w]}
+>
+    <T.Mesh position={[0, 0, 0]} castShadow>
+        <T.BoxGeometry args={[0.5, 0.15, 0.6]} />
+        <T.MeshStandardMaterial color="#ffccaa" />
     </T.Mesh>
-</RigidBody>
+
+    <T.Mesh position={[0, 0, 0.35]}>
+         <T.CylinderGeometry args={[0.2, 0.25, 0.2]} />
+         <T.MeshStandardMaterial color="#ffccaa" />
+    </T.Mesh>
+
+    <T.Group position={[0.3, 0, 0.1]} rotation={[0, -0.5, 0]}>
+        <T.Group rotation={[fingerCurl * 0.5, 0, 0]}>
+            <T.Mesh position={[0.05, 0, -0.15]}>
+                <T.BoxGeometry args={[0.12, 0.12, 0.3]} />
+                <T.MeshStandardMaterial color="#ffccaa" />
+            </T.Mesh>
+             <T.Group position={[0.05, 0, -0.3]} rotation={[fingerCurl * 0.5, 0, 0]}>
+                <T.Mesh position={[0, 0, -0.1]}>
+                    <T.BoxGeometry args={[0.1, 0.1, 0.2]} />
+                    <T.MeshStandardMaterial color="#ffccaa" />
+                </T.Mesh>
+             </T.Group>
+        </T.Group>
+    </T.Group>
+
+    <T.Group position={[0.18, 0, -0.3]}>
+        <T.Group rotation={[indexCurl, 0, 0]}>
+            <T.Mesh position={[0, 0, -0.15]}>
+                <T.BoxGeometry args={[0.1, 0.1, 0.3]} />
+                <T.MeshStandardMaterial color="#ffccaa" />
+            </T.Mesh>
+            <T.Group position={[0, 0, -0.3]} rotation={[indexCurl * 0.5, 0, 0]}>
+                <T.Mesh position={[0, 0, -0.15]}>
+                    <T.BoxGeometry args={[0.09, 0.09, 0.25]} />
+                    <T.MeshStandardMaterial color="#ffccaa" />
+                </T.Mesh>
+            </T.Group>
+        </T.Group>
+    </T.Group>
+
+    <T.Group position={[0.0, 0, -0.3]}>
+        <T.Group rotation={[fingerCurl, 0, 0]}>
+            <T.Mesh position={[0, 0, -0.16]}>
+                <T.BoxGeometry args={[0.1, 0.1, 0.32]} />
+                <T.MeshStandardMaterial color="#ffccaa" />
+            </T.Mesh>
+            <T.Group position={[0, 0, -0.32]} rotation={[fingerCurl * 0.5, 0, 0]}>
+                <T.Mesh position={[0, 0, -0.16]}>
+                    <T.BoxGeometry args={[0.09, 0.09, 0.26]} />
+                    <T.MeshStandardMaterial color="#ffccaa" />
+                </T.Mesh>
+            </T.Group>
+        </T.Group>
+    </T.Group>
+
+    <T.Group position={[-0.18, 0, -0.3]}>
+        <T.Group rotation={[fingerCurl, 0, 0]}>
+            <T.Mesh position={[0, 0, -0.15]}>
+                <T.BoxGeometry args={[0.1, 0.1, 0.3]} />
+                <T.MeshStandardMaterial color="#ffccaa" />
+            </T.Mesh>
+             <T.Group position={[0, 0, -0.3]} rotation={[fingerCurl * 0.5, 0, 0]}>
+                <T.Mesh position={[0, 0, -0.15]}>
+                    <T.BoxGeometry args={[0.09, 0.09, 0.25]} />
+                    <T.MeshStandardMaterial color="#ffccaa" />
+                </T.Mesh>
+            </T.Group>
+        </T.Group>
+    </T.Group>
+
+    <T.Group position={[-0.34, 0, -0.3]}>
+        <T.Group rotation={[fingerCurl, 0, 0]}>
+            <T.Mesh position={[0, 0, -0.12]}>
+                <T.BoxGeometry args={[0.09, 0.09, 0.24]} />
+                <T.MeshStandardMaterial color="#ffccaa" />
+            </T.Mesh>
+            <T.Group position={[0, 0, -0.24]} rotation={[fingerCurl * 0.5, 0, 0]}>
+                <T.Mesh position={[0, 0, -0.12]}>
+                    <T.BoxGeometry args={[0.08, 0.08, 0.2]} />
+                    <T.MeshStandardMaterial color="#ffccaa" />
+                </T.Mesh>
+            </T.Group>
+        </T.Group>
+    </T.Group>
+
+</T.Group>

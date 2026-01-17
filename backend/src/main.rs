@@ -15,6 +15,7 @@ mod state;
 mod models;
 mod tarot_engine;
 mod ai_service;
+mod ws_handler;
 
 use crate::state::AppState;
 use crate::tarot_engine::TarotDeck;
@@ -48,6 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let app = Router::new()
         .route("/health", get(|| async { "OK" }))
         .route("/api/draw", post(handlers::draw_cards))
+        .route("/ws", get(ws_handler::ws_upgrade))
         .layer(CorsLayer::permissive())
         .with_state(state);
 

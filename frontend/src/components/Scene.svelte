@@ -1,15 +1,17 @@
 <script lang="ts">
     import { T, useTask } from "@threlte/core";
-    import { Environment, OrbitControls } from "@threlte/extras";
+    import { Environment, OrbitControls, interactivity } from "@threlte/extras";
     import { AutoColliders, RigidBody, Collider, World } from "@threlte/rapier";
     import CardDeck from "./CardDeck.svelte";
     import Table from "./Table.svelte";
     import Hand from "./Hand.svelte";
+
+    interactivity();
 </script>
 
 <!-- Physics World -->
 <World>
-    <Environment preset="city" />
+    <!-- <Environment preset="city" /> -->
 
     <T.PerspectiveCamera
         makeDefault

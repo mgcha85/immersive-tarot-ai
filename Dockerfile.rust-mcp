@@ -1,0 +1,11 @@
+# Dockerfile.rust-mcp
+FROM rust:slim
+
+# 필요한 의존성 및 rust-analyzer 설치
+RUN apt-get update && apt-get install -y git pkg-config libssl-dev \
+    && rustup component add rust-analyzer \
+    && cargo install rust-analyzer-mcp
+
+WORKDIR /project
+# stdio 방식으로 통신
+ENTRYPOINT ["rust-analyzer-mcp"]

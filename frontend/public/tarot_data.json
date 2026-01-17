@@ -1,67 +1,1023 @@
-[
-  {
-    "id": "major_0",
-    "name": "The Fool",
-    "arcana": "major",
-    "suit": null,
-    "number": 0,
-    "archetype": "The New Beginning",
-    "keywords": {
-      "upright": ["Innocence", "New Beginnings", "Free Spirit"],
-      "reversed": ["Recklessness", "Taken Advantage Of", "Inconsiderate"]
-    },
-    "situational_tags": ["start", "adventure", "risk", "unknown"]
+{
+  "deck": {
+    "name": "Rider-Waite-Smith Tarot",
+    "version": "1.0.0",
+    "total_cards": 78
   },
-  {
-    "id": "major_1",
-    "name": "The Magician",
-    "arcana": "major",
-    "suit": null,
-    "number": 1,
-    "archetype": "The Manifestor",
-    "keywords": {
-      "upright": ["Willpower", "Desire", "Creation", "Manifestation"],
-      "reversed": ["Trickery", "Illusions", "Out of Touch"]
+  "cards": [
+    {
+      "id": "major_0",
+      "name": "The Fool",
+      "arcana": "major",
+      "suit": null,
+      "number": 0,
+      "archetype": "The Innocent",
+      "keywords": {
+        "upright": ["new beginnings", "innocence", "spontaneity", "free spirit", "leap of faith"],
+        "reversed": ["recklessness", "naivety", "foolishness", "risk-taking", "holding back"]
+      },
+      "situational_tags": ["change", "travel", "spiritual", "choice", "creativity"]
     },
-    "situational_tags": ["action", "power", "skill", "resourcefulness"]
-  },
-  {
-    "id": "major_2",
-    "name": "The High Priestess",
-    "arcana": "major",
-    "suit": null,
-    "number": 2,
-    "archetype": "The Intuitive",
-    "keywords": {
-      "upright": ["Intuition", "Unconscious", "Inner Voice"],
-      "reversed": ["Lack of Center", "Lost Inner Voice", "Repressed Feelings"]
+    {
+      "id": "major_1",
+      "name": "The Magician",
+      "arcana": "major",
+      "suit": null,
+      "number": 1,
+      "archetype": "The Creator",
+      "keywords": {
+        "upright": ["manifestation", "willpower", "resourcefulness", "skill", "concentration"],
+        "reversed": ["manipulation", "trickery", "untapped potential", "deception", "illusion"]
+      },
+      "situational_tags": ["career", "creativity", "communication", "spiritual", "education"]
     },
-    "situational_tags": ["mystery", "subconscious", "wisdom", "passive"]
-  },
-  {
-    "id": "cups_ace",
-    "name": "Ace of Cups",
-    "arcana": "minor",
-    "suit": "cups",
-    "number": 1,
-    "archetype": "Emotional Overflow",
-    "keywords": {
-      "upright": ["Love", "New Relationships", "Compassion"],
-      "reversed": ["Self Loven", "Repressed Emotions"]
+    {
+      "id": "major_2",
+      "name": "The High Priestess",
+      "arcana": "major",
+      "suit": null,
+      "number": 2,
+      "archetype": "The Sage",
+      "keywords": {
+        "upright": ["intuition", "mystery", "inner knowledge", "subconscious", "divine feminine"],
+        "reversed": ["secrets", "withdrawal", "silence", "repressed intuition", "hidden agendas"]
+      },
+      "situational_tags": ["spiritual", "love", "education", "health", "choice"]
     },
-    "situational_tags": ["love", "relationship", "emotion", "feeling"]
-  },
-  {
-    "id": "pentacles_10",
-    "name": "Ten of Pentacles",
-    "arcana": "minor",
-    "suit": "pentacles",
-    "number": 10,
-    "archetype": "Wealth",
-    "keywords": {
-      "upright": ["Wealth", "Inheritance", "Family"],
-      "reversed": ["Financial Failure", "Loneliness"]
+    {
+      "id": "major_3",
+      "name": "The Empress",
+      "arcana": "major",
+      "suit": null,
+      "number": 3,
+      "archetype": "The Mother",
+      "keywords": {
+        "upright": ["abundance", "fertility", "nurturing", "nature", "sensuality"],
+        "reversed": ["creative block", "dependence", "smothering", "neglect", "stagnation"]
+      },
+      "situational_tags": ["love", "family", "home", "creativity", "health", "money"]
     },
-    "situational_tags": ["money", "career", "legacy", "home"]
-  }
-]
+    {
+      "id": "major_4",
+      "name": "The Emperor",
+      "arcana": "major",
+      "suit": null,
+      "number": 4,
+      "archetype": "The Father",
+      "keywords": {
+        "upright": ["authority", "structure", "leadership", "stability", "discipline"],
+        "reversed": ["tyranny", "rigidity", "domination", "inflexibility", "lack of discipline"]
+      },
+      "situational_tags": ["career", "legal", "family", "money", "conflict"]
+    },
+    {
+      "id": "major_5",
+      "name": "The Hierophant",
+      "arcana": "major",
+      "suit": null,
+      "number": 5,
+      "archetype": "The Teacher",
+      "keywords": {
+        "upright": ["tradition", "conformity", "spiritual guidance", "institutions", "beliefs"],
+        "reversed": ["rebellion", "unconventionality", "new approaches", "challenging tradition", "personal beliefs"]
+      },
+      "situational_tags": ["spiritual", "education", "love", "legal", "family"]
+    },
+    {
+      "id": "major_6",
+      "name": "The Lovers",
+      "arcana": "major",
+      "suit": null,
+      "number": 6,
+      "archetype": "The Union",
+      "keywords": {
+        "upright": ["love", "harmony", "partnership", "choices", "alignment of values"],
+        "reversed": ["disharmony", "imbalance", "misalignment", "difficult choices", "separation"]
+      },
+      "situational_tags": ["love", "choice", "family", "communication", "spiritual"]
+    },
+    {
+      "id": "major_7",
+      "name": "The Chariot",
+      "arcana": "major",
+      "suit": null,
+      "number": 7,
+      "archetype": "The Warrior",
+      "keywords": {
+        "upright": ["determination", "willpower", "victory", "control", "ambition"],
+        "reversed": ["lack of direction", "aggression", "obstacles", "lack of control", "defeat"]
+      },
+      "situational_tags": ["career", "travel", "conflict", "legal", "health"]
+    },
+    {
+      "id": "major_8",
+      "name": "Strength",
+      "arcana": "major",
+      "suit": null,
+      "number": 8,
+      "archetype": "The Healer",
+      "keywords": {
+        "upright": ["courage", "patience", "compassion", "inner strength", "persuasion"],
+        "reversed": ["self-doubt", "weakness", "insecurity", "raw emotion", "lack of confidence"]
+      },
+      "situational_tags": ["health", "conflict", "love", "spiritual", "career"]
+    },
+    {
+      "id": "major_9",
+      "name": "The Hermit",
+      "arcana": "major",
+      "suit": null,
+      "number": 9,
+      "archetype": "The Seeker",
+      "keywords": {
+        "upright": ["introspection", "solitude", "inner guidance", "soul-searching", "contemplation"],
+        "reversed": ["isolation", "loneliness", "withdrawal", "lost", "anti-social"]
+      },
+      "situational_tags": ["spiritual", "education", "health", "choice", "travel"]
+    },
+    {
+      "id": "major_10",
+      "name": "Wheel of Fortune",
+      "arcana": "major",
+      "suit": null,
+      "number": 10,
+      "archetype": "The Opportunist",
+      "keywords": {
+        "upright": ["destiny", "fate", "cycles", "turning point", "luck"],
+        "reversed": ["bad luck", "resistance to change", "breaking cycles", "unwelcome change", "lack of control"]
+      },
+      "situational_tags": ["change", "money", "career", "spiritual", "choice"]
+    },
+    {
+      "id": "major_11",
+      "name": "Justice",
+      "arcana": "major",
+      "suit": null,
+      "number": 11,
+      "archetype": "The Judge",
+      "keywords": {
+        "upright": ["fairness", "truth", "law", "cause and effect", "balance"],
+        "reversed": ["dishonesty", "unfairness", "lack of accountability", "corruption", "injustice"]
+      },
+      "situational_tags": ["legal", "conflict", "career", "choice", "communication"]
+    },
+    {
+      "id": "major_12",
+      "name": "The Hanged Man",
+      "arcana": "major",
+      "suit": null,
+      "number": 12,
+      "archetype": "The Martyr",
+      "keywords": {
+        "upright": ["suspension", "letting go", "sacrifice", "new perspective", "waiting"],
+        "reversed": ["stalling", "resistance", "indecision", "delays", "missed opportunities"]
+      },
+      "situational_tags": ["spiritual", "change", "choice", "health", "conflict"]
+    },
+    {
+      "id": "major_13",
+      "name": "Death",
+      "arcana": "major",
+      "suit": null,
+      "number": 13,
+      "archetype": "The Transformer",
+      "keywords": {
+        "upright": ["endings", "transformation", "transition", "letting go", "release"],
+        "reversed": ["resistance to change", "stagnation", "decay", "fear of endings", "inability to move on"]
+      },
+      "situational_tags": ["change", "spiritual", "love", "career", "health"]
+    },
+    {
+      "id": "major_14",
+      "name": "Temperance",
+      "arcana": "major",
+      "suit": null,
+      "number": 14,
+      "archetype": "The Alchemist",
+      "keywords": {
+        "upright": ["balance", "moderation", "patience", "harmony", "purpose"],
+        "reversed": ["imbalance", "excess", "lack of patience", "discord", "overindulgence"]
+      },
+      "situational_tags": ["health", "spiritual", "love", "conflict", "choice"]
+    },
+    {
+      "id": "major_15",
+      "name": "The Devil",
+      "arcana": "major",
+      "suit": null,
+      "number": 15,
+      "archetype": "The Shadow",
+      "keywords": {
+        "upright": ["bondage", "materialism", "addiction", "shadow self", "attachment"],
+        "reversed": ["release", "breaking free", "detachment", "enlightenment", "reclaiming power"]
+      },
+      "situational_tags": ["conflict", "love", "money", "health", "spiritual"]
+    },
+    {
+      "id": "major_16",
+      "name": "The Tower",
+      "arcana": "major",
+      "suit": null,
+      "number": 16,
+      "archetype": "The Destroyer",
+      "keywords": {
+        "upright": ["upheaval", "sudden change", "revelation", "awakening", "chaos"],
+        "reversed": ["fear of change", "avoidance", "delayed disaster", "resisting inevitable", "personal transformation"]
+      },
+      "situational_tags": ["change", "conflict", "career", "love", "home"]
+    },
+    {
+      "id": "major_17",
+      "name": "The Star",
+      "arcana": "major",
+      "suit": null,
+      "number": 17,
+      "archetype": "The Healer",
+      "keywords": {
+        "upright": ["hope", "inspiration", "serenity", "renewal", "spirituality"],
+        "reversed": ["despair", "disconnection", "lack of faith", "discouragement", "insecurity"]
+      },
+      "situational_tags": ["spiritual", "health", "love", "creativity", "change"]
+    },
+    {
+      "id": "major_18",
+      "name": "The Moon",
+      "arcana": "major",
+      "suit": null,
+      "number": 18,
+      "archetype": "The Dreamer",
+      "keywords": {
+        "upright": ["illusion", "intuition", "unconscious", "dreams", "fear"],
+        "reversed": ["confusion", "fear", "misinterpretation", "clarity emerging", "repressed emotions"]
+      },
+      "situational_tags": ["spiritual", "love", "health", "conflict", "choice"]
+    },
+    {
+      "id": "major_19",
+      "name": "The Sun",
+      "arcana": "major",
+      "suit": null,
+      "number": 19,
+      "archetype": "The Child",
+      "keywords": {
+        "upright": ["joy", "success", "vitality", "positivity", "abundance"],
+        "reversed": ["temporary depression", "lack of success", "sadness", "blocked joy", "excessive optimism"]
+      },
+      "situational_tags": ["love", "career", "health", "family", "creativity"]
+    },
+    {
+      "id": "major_20",
+      "name": "Judgement",
+      "arcana": "major",
+      "suit": null,
+      "number": 20,
+      "archetype": "The Awakener",
+      "keywords": {
+        "upright": ["rebirth", "inner calling", "absolution", "self-evaluation", "awakening"],
+        "reversed": ["self-doubt", "lack of self-awareness", "failure to learn", "stagnation", "harsh self-judgment"]
+      },
+      "situational_tags": ["spiritual", "change", "career", "legal", "choice"]
+    },
+    {
+      "id": "major_21",
+      "name": "The World",
+      "arcana": "major",
+      "suit": null,
+      "number": 21,
+      "archetype": "The Integrator",
+      "keywords": {
+        "upright": ["completion", "integration", "accomplishment", "travel", "wholeness"],
+        "reversed": ["incompletion", "lack of closure", "stagnation", "emptiness", "delayed success"]
+      },
+      "situational_tags": ["travel", "career", "spiritual", "education", "change"]
+    },
+    {
+      "id": "wands_ace",
+      "name": "Ace of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 1,
+      "archetype": "The Spark",
+      "keywords": {
+        "upright": ["inspiration", "new opportunities", "creativity", "potential", "growth"],
+        "reversed": ["delays", "lack of motivation", "creative blocks", "missed opportunity", "hesitation"]
+      },
+      "situational_tags": ["creativity", "career", "spiritual", "change", "travel"]
+    },
+    {
+      "id": "wands_2",
+      "name": "Two of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 2,
+      "archetype": "The Planner",
+      "keywords": {
+        "upright": ["planning", "decisions", "discovery", "future vision", "progress"],
+        "reversed": ["fear of unknown", "lack of planning", "bad decisions", "playing it safe", "stagnation"]
+      },
+      "situational_tags": ["career", "travel", "choice", "money", "education"]
+    },
+    {
+      "id": "wands_3",
+      "name": "Three of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 3,
+      "archetype": "The Visionary",
+      "keywords": {
+        "upright": ["expansion", "foresight", "overseas opportunities", "progress", "leadership"],
+        "reversed": ["obstacles", "delays", "frustration", "lack of foresight", "playing small"]
+      },
+      "situational_tags": ["career", "travel", "money", "education", "change"]
+    },
+    {
+      "id": "wands_4",
+      "name": "Four of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 4,
+      "archetype": "The Celebrant",
+      "keywords": {
+        "upright": ["celebration", "harmony", "homecoming", "community", "foundation"],
+        "reversed": ["conflict at home", "lack of harmony", "instability", "transition", "unwelcoming"]
+      },
+      "situational_tags": ["home", "family", "love", "career", "creativity"]
+    },
+    {
+      "id": "wands_5",
+      "name": "Five of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 5,
+      "archetype": "The Competitor",
+      "keywords": {
+        "upright": ["conflict", "competition", "tension", "diversity", "disagreement"],
+        "reversed": ["avoiding conflict", "inner conflict", "resolution", "cooperation", "end of struggle"]
+      },
+      "situational_tags": ["conflict", "career", "communication", "legal", "family"]
+    },
+    {
+      "id": "wands_6",
+      "name": "Six of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 6,
+      "archetype": "The Victor",
+      "keywords": {
+        "upright": ["victory", "recognition", "success", "public acclaim", "self-confidence"],
+        "reversed": ["ego", "fall from grace", "lack of recognition", "failure", "pride before fall"]
+      },
+      "situational_tags": ["career", "creativity", "legal", "communication", "education"]
+    },
+    {
+      "id": "wands_7",
+      "name": "Seven of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 7,
+      "archetype": "The Defender",
+      "keywords": {
+        "upright": ["perseverance", "defense", "maintaining position", "challenge", "determination"],
+        "reversed": ["giving up", "overwhelmed", "exhaustion", "admitting defeat", "lack of confidence"]
+      },
+      "situational_tags": ["conflict", "career", "legal", "communication", "health"]
+    },
+    {
+      "id": "wands_8",
+      "name": "Eight of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 8,
+      "archetype": "The Messenger",
+      "keywords": {
+        "upright": ["speed", "movement", "swift action", "air travel", "progress"],
+        "reversed": ["delays", "frustration", "slowdown", "miscommunication", "waiting"]
+      },
+      "situational_tags": ["travel", "communication", "career", "love", "change"]
+    },
+    {
+      "id": "wands_9",
+      "name": "Nine of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 9,
+      "archetype": "The Warrior",
+      "keywords": {
+        "upright": ["resilience", "persistence", "courage", "boundaries", "last stand"],
+        "reversed": ["exhaustion", "giving up", "paranoia", "defensiveness", "overwhelmed"]
+      },
+      "situational_tags": ["conflict", "health", "career", "legal", "spiritual"]
+    },
+    {
+      "id": "wands_10",
+      "name": "Ten of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 10,
+      "archetype": "The Burden Bearer",
+      "keywords": {
+        "upright": ["burden", "responsibility", "hard work", "stress", "accomplishment"],
+        "reversed": ["release", "delegation", "breakdown", "inability to delegate", "overstressed"]
+      },
+      "situational_tags": ["career", "health", "family", "money", "conflict"]
+    },
+    {
+      "id": "wands_page",
+      "name": "Page of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 11,
+      "archetype": "The Explorer",
+      "keywords": {
+        "upright": ["enthusiasm", "exploration", "discovery", "free spirit", "potential"],
+        "reversed": ["lack of direction", "immaturity", "hasty decisions", "scattered energy", "setbacks"]
+      },
+      "situational_tags": ["creativity", "education", "travel", "career", "communication"]
+    },
+    {
+      "id": "wands_knight",
+      "name": "Knight of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 12,
+      "archetype": "The Adventurer",
+      "keywords": {
+        "upright": ["action", "adventure", "fearlessness", "energy", "passion"],
+        "reversed": ["impulsiveness", "haste", "scattered energy", "delays", "frustration"]
+      },
+      "situational_tags": ["travel", "career", "love", "creativity", "change"]
+    },
+    {
+      "id": "wands_queen",
+      "name": "Queen of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 13,
+      "archetype": "The Enchantress",
+      "keywords": {
+        "upright": ["confidence", "independence", "warmth", "determination", "vibrancy"],
+        "reversed": ["jealousy", "selfishness", "insecurity", "temperamental", "demanding"]
+      },
+      "situational_tags": ["career", "love", "creativity", "home", "communication"]
+    },
+    {
+      "id": "wands_king",
+      "name": "King of Wands",
+      "arcana": "minor",
+      "suit": "wands",
+      "number": 14,
+      "archetype": "The Visionary Leader",
+      "keywords": {
+        "upright": ["leadership", "vision", "entrepreneur", "honor", "charisma"],
+        "reversed": ["impulsiveness", "overbearing", "tyrannical", "unrealistic expectations", "ruthlessness"]
+      },
+      "situational_tags": ["career", "legal", "money", "creativity", "conflict"]
+    },
+    {
+      "id": "cups_ace",
+      "name": "Ace of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 1,
+      "archetype": "The Fountain",
+      "keywords": {
+        "upright": ["new love", "compassion", "creativity", "emotional fulfillment", "spirituality"],
+        "reversed": ["emotional loss", "blocked creativity", "emptiness", "repressed feelings", "sadness"]
+      },
+      "situational_tags": ["love", "spiritual", "creativity", "family", "health"]
+    },
+    {
+      "id": "cups_2",
+      "name": "Two of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 2,
+      "archetype": "The Partnership",
+      "keywords": {
+        "upright": ["partnership", "unity", "love", "mutual attraction", "connection"],
+        "reversed": ["imbalance", "broken communication", "tension", "separation", "distrust"]
+      },
+      "situational_tags": ["love", "family", "career", "communication", "legal"]
+    },
+    {
+      "id": "cups_3",
+      "name": "Three of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 3,
+      "archetype": "The Celebration",
+      "keywords": {
+        "upright": ["celebration", "friendship", "creativity", "collaboration", "community"],
+        "reversed": ["overindulgence", "gossip", "isolation", "third party", "scattered energy"]
+      },
+      "situational_tags": ["family", "love", "creativity", "communication", "home"]
+    },
+    {
+      "id": "cups_4",
+      "name": "Four of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 4,
+      "archetype": "The Contemplator",
+      "keywords": {
+        "upright": ["contemplation", "apathy", "reevaluation", "meditation", "discontent"],
+        "reversed": ["awareness", "acceptance", "moving forward", "seizing opportunity", "motivation"]
+      },
+      "situational_tags": ["spiritual", "love", "career", "choice", "health"]
+    },
+    {
+      "id": "cups_5",
+      "name": "Five of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 5,
+      "archetype": "The Mourner",
+      "keywords": {
+        "upright": ["loss", "grief", "disappointment", "regret", "sorrow"],
+        "reversed": ["acceptance", "moving on", "finding peace", "forgiveness", "recovery"]
+      },
+      "situational_tags": ["love", "family", "health", "conflict", "spiritual"]
+    },
+    {
+      "id": "cups_6",
+      "name": "Six of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 6,
+      "archetype": "The Nostalgic",
+      "keywords": {
+        "upright": ["nostalgia", "childhood memories", "innocence", "joy", "reunion"],
+        "reversed": ["living in the past", "unrealistic", "stuck", "naivety", "forgiveness"]
+      },
+      "situational_tags": ["family", "love", "home", "spiritual", "creativity"]
+    },
+    {
+      "id": "cups_7",
+      "name": "Seven of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 7,
+      "archetype": "The Dreamer",
+      "keywords": {
+        "upright": ["choices", "fantasy", "illusion", "wishful thinking", "imagination"],
+        "reversed": ["clarity", "reality check", "focus", "making choices", "determination"]
+      },
+      "situational_tags": ["choice", "career", "love", "spiritual", "creativity"]
+    },
+    {
+      "id": "cups_8",
+      "name": "Eight of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 8,
+      "archetype": "The Seeker",
+      "keywords": {
+        "upright": ["walking away", "disillusionment", "leaving behind", "seeking truth", "journey"],
+        "reversed": ["fear of change", "stagnation", "clinging", "avoidance", "aimless drifting"]
+      },
+      "situational_tags": ["change", "love", "spiritual", "travel", "career"]
+    },
+    {
+      "id": "cups_9",
+      "name": "Nine of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 9,
+      "archetype": "The Wish Granter",
+      "keywords": {
+        "upright": ["contentment", "satisfaction", "gratitude", "wish fulfilled", "pleasure"],
+        "reversed": ["dissatisfaction", "greed", "materialism", "unhappiness", "shattered dreams"]
+      },
+      "situational_tags": ["love", "money", "health", "family", "spiritual"]
+    },
+    {
+      "id": "cups_10",
+      "name": "Ten of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 10,
+      "archetype": "The Blessed Family",
+      "keywords": {
+        "upright": ["divine love", "harmony", "alignment", "family happiness", "fulfillment"],
+        "reversed": ["broken family", "disharmony", "misalignment", "dysfunction", "neglecting family"]
+      },
+      "situational_tags": ["family", "love", "home", "spiritual", "health"]
+    },
+    {
+      "id": "cups_page",
+      "name": "Page of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 11,
+      "archetype": "The Dreamer",
+      "keywords": {
+        "upright": ["creativity", "intuition", "curiosity", "possibility", "messenger of love"],
+        "reversed": ["emotional immaturity", "creative block", "escapism", "insecurity", "bad news"]
+      },
+      "situational_tags": ["love", "creativity", "spiritual", "communication", "education"]
+    },
+    {
+      "id": "cups_knight",
+      "name": "Knight of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 12,
+      "archetype": "The Romantic",
+      "keywords": {
+        "upright": ["romance", "charm", "imagination", "beauty", "diplomatic"],
+        "reversed": ["moodiness", "unrealistic", "jealousy", "disappointment", "tantrums"]
+      },
+      "situational_tags": ["love", "creativity", "communication", "choice", "spiritual"]
+    },
+    {
+      "id": "cups_queen",
+      "name": "Queen of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 13,
+      "archetype": "The Empath",
+      "keywords": {
+        "upright": ["compassion", "nurturing", "intuition", "emotional stability", "sensitivity"],
+        "reversed": ["martyrdom", "insecurity", "codependency", "emotional manipulation", "overwhelmed"]
+      },
+      "situational_tags": ["love", "family", "health", "spiritual", "communication"]
+    },
+    {
+      "id": "cups_king",
+      "name": "King of Cups",
+      "arcana": "minor",
+      "suit": "cups",
+      "number": 14,
+      "archetype": "The Counselor",
+      "keywords": {
+        "upright": ["emotional balance", "diplomacy", "compassion", "wisdom", "calm"],
+        "reversed": ["moodiness", "manipulation", "coldness", "volatility", "emotional detachment"]
+      },
+      "situational_tags": ["love", "career", "family", "legal", "health"]
+    },
+    {
+      "id": "swords_ace",
+      "name": "Ace of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 1,
+      "archetype": "The Breakthrough",
+      "keywords": {
+        "upright": ["clarity", "breakthrough", "new idea", "truth", "mental force"],
+        "reversed": ["confusion", "chaos", "lack of clarity", "hostility", "clouded judgment"]
+      },
+      "situational_tags": ["communication", "legal", "education", "career", "conflict"]
+    },
+    {
+      "id": "swords_2",
+      "name": "Two of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 2,
+      "archetype": "The Blind Choice",
+      "keywords": {
+        "upright": ["difficult decision", "stalemate", "avoidance", "truce", "indecision"],
+        "reversed": ["indecision", "confusion", "information overload", "seeing truth", "lesser of evils"]
+      },
+      "situational_tags": ["choice", "conflict", "love", "career", "legal"]
+    },
+    {
+      "id": "swords_3",
+      "name": "Three of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 3,
+      "archetype": "The Heartbreak",
+      "keywords": {
+        "upright": ["heartbreak", "sorrow", "grief", "painful truth", "separation"],
+        "reversed": ["recovery", "forgiveness", "moving on", "releasing pain", "optimism"]
+      },
+      "situational_tags": ["love", "conflict", "family", "health", "communication"]
+    },
+    {
+      "id": "swords_4",
+      "name": "Four of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 4,
+      "archetype": "The Resting Warrior",
+      "keywords": {
+        "upright": ["rest", "restoration", "contemplation", "recuperation", "peace"],
+        "reversed": ["restlessness", "burnout", "stagnation", "lack of progress", "exhaustion"]
+      },
+      "situational_tags": ["health", "spiritual", "conflict", "career", "change"]
+    },
+    {
+      "id": "swords_5",
+      "name": "Five of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 5,
+      "archetype": "The Pyrrhic Victor",
+      "keywords": {
+        "upright": ["conflict", "defeat", "winning at all costs", "hostility", "dishonor"],
+        "reversed": ["reconciliation", "making amends", "past resentment", "moving on", "forgiveness"]
+      },
+      "situational_tags": ["conflict", "legal", "career", "communication", "family"]
+    },
+    {
+      "id": "swords_6",
+      "name": "Six of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 6,
+      "archetype": "The Passage",
+      "keywords": {
+        "upright": ["transition", "moving on", "leaving behind", "travel", "healing"],
+        "reversed": ["resistance to change", "unfinished business", "stagnation", "baggage", "trapped"]
+      },
+      "situational_tags": ["travel", "change", "health", "conflict", "spiritual"]
+    },
+    {
+      "id": "swords_7",
+      "name": "Seven of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 7,
+      "archetype": "The Strategist",
+      "keywords": {
+        "upright": ["deception", "strategy", "betrayal", "cunning", "stealth"],
+        "reversed": ["coming clean", "conscience", "rethinking", "exposure", "confession"]
+      },
+      "situational_tags": ["conflict", "legal", "career", "communication", "love"]
+    },
+    {
+      "id": "swords_8",
+      "name": "Eight of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 8,
+      "archetype": "The Prisoner",
+      "keywords": {
+        "upright": ["restriction", "imprisonment", "victimhood", "self-limiting beliefs", "helplessness"],
+        "reversed": ["self-acceptance", "new perspective", "freedom", "release", "empowerment"]
+      },
+      "situational_tags": ["conflict", "health", "love", "spiritual", "choice"]
+    },
+    {
+      "id": "swords_9",
+      "name": "Nine of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 9,
+      "archetype": "The Nightmare",
+      "keywords": {
+        "upright": ["anxiety", "nightmares", "fear", "worry", "despair"],
+        "reversed": ["inner turmoil", "hope", "reaching out", "learning to cope", "recovery"]
+      },
+      "situational_tags": ["health", "conflict", "spiritual", "love", "family"]
+    },
+    {
+      "id": "swords_10",
+      "name": "Ten of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 10,
+      "archetype": "The End",
+      "keywords": {
+        "upright": ["painful ending", "rock bottom", "betrayal", "loss", "crisis"],
+        "reversed": ["recovery", "regeneration", "resisting end", "inevitable", "improvement"]
+      },
+      "situational_tags": ["conflict", "change", "career", "love", "health"]
+    },
+    {
+      "id": "swords_page",
+      "name": "Page of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 11,
+      "archetype": "The Spy",
+      "keywords": {
+        "upright": ["curiosity", "new ideas", "thirst for knowledge", "communication", "vigilance"],
+        "reversed": ["deception", "manipulation", "haste", "all talk no action", "cynicism"]
+      },
+      "situational_tags": ["education", "communication", "legal", "conflict", "career"]
+    },
+    {
+      "id": "swords_knight",
+      "name": "Knight of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 12,
+      "archetype": "The Warrior",
+      "keywords": {
+        "upright": ["ambition", "action", "drive", "determination", "fast-thinking"],
+        "reversed": ["aggression", "impulsiveness", "recklessness", "unfocused", "disregard for others"]
+      },
+      "situational_tags": ["career", "conflict", "legal", "communication", "travel"]
+    },
+    {
+      "id": "swords_queen",
+      "name": "Queen of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 13,
+      "archetype": "The Truth-Seeker",
+      "keywords": {
+        "upright": ["clear thinking", "independence", "direct communication", "perceptive", "unbiased"],
+        "reversed": ["cold-hearted", "cruel", "bitterness", "overly critical", "pessimistic"]
+      },
+      "situational_tags": ["legal", "career", "communication", "conflict", "education"]
+    },
+    {
+      "id": "swords_king",
+      "name": "King of Swords",
+      "arcana": "minor",
+      "suit": "swords",
+      "number": 14,
+      "archetype": "The Authority",
+      "keywords": {
+        "upright": ["intellectual power", "authority", "truth", "ethics", "clear thinking"],
+        "reversed": ["manipulation", "cruelty", "abuse of power", "cold", "dishonesty"]
+      },
+      "situational_tags": ["legal", "career", "conflict", "communication", "education"]
+    },
+    {
+      "id": "pentacles_ace",
+      "name": "Ace of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 1,
+      "archetype": "The Seed",
+      "keywords": {
+        "upright": ["opportunity", "prosperity", "new venture", "manifestation", "abundance"],
+        "reversed": ["lost opportunity", "scarcity", "instability", "poor planning", "greed"]
+      },
+      "situational_tags": ["money", "career", "home", "health", "education"]
+    },
+    {
+      "id": "pentacles_2",
+      "name": "Two of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 2,
+      "archetype": "The Juggler",
+      "keywords": {
+        "upright": ["balance", "adaptability", "time management", "prioritization", "flexibility"],
+        "reversed": ["imbalance", "disorganization", "overwhelmed", "financial stress", "poor priorities"]
+      },
+      "situational_tags": ["money", "career", "home", "health", "family"]
+    },
+    {
+      "id": "pentacles_3",
+      "name": "Three of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 3,
+      "archetype": "The Craftsman",
+      "keywords": {
+        "upright": ["teamwork", "collaboration", "craftsmanship", "learning", "implementation"],
+        "reversed": ["lack of teamwork", "disregard for skills", "poor quality", "conflict", "ego"]
+      },
+      "situational_tags": ["career", "education", "money", "communication", "creativity"]
+    },
+    {
+      "id": "pentacles_4",
+      "name": "Four of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 4,
+      "archetype": "The Miser",
+      "keywords": {
+        "upright": ["security", "control", "conservation", "stability", "frugality"],
+        "reversed": ["greed", "materialism", "over-spending", "insecurity", "letting go"]
+      },
+      "situational_tags": ["money", "career", "home", "family", "conflict"]
+    },
+    {
+      "id": "pentacles_5",
+      "name": "Five of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 5,
+      "archetype": "The Outcast",
+      "keywords": {
+        "upright": ["hardship", "loss", "isolation", "poverty", "worry"],
+        "reversed": ["recovery", "improvement", "positive changes", "end of hard times", "faith"]
+      },
+      "situational_tags": ["money", "health", "conflict", "family", "spiritual"]
+    },
+    {
+      "id": "pentacles_6",
+      "name": "Six of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 6,
+      "archetype": "The Philanthropist",
+      "keywords": {
+        "upright": ["generosity", "charity", "giving", "sharing wealth", "gratitude"],
+        "reversed": ["debt", "selfishness", "strings attached", "inequality", "power dynamics"]
+      },
+      "situational_tags": ["money", "career", "family", "spiritual", "legal"]
+    },
+    {
+      "id": "pentacles_7",
+      "name": "Seven of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 7,
+      "archetype": "The Farmer",
+      "keywords": {
+        "upright": ["patience", "investment", "perseverance", "long-term view", "reward"],
+        "reversed": ["impatience", "lack of reward", "bad investments", "frustration", "giving up"]
+      },
+      "situational_tags": ["career", "money", "education", "health", "spiritual"]
+    },
+    {
+      "id": "pentacles_8",
+      "name": "Eight of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 8,
+      "archetype": "The Apprentice",
+      "keywords": {
+        "upright": ["dedication", "craftsmanship", "skill development", "diligence", "mastery"],
+        "reversed": ["perfectionism", "lack of focus", "shortcuts", "mediocrity", "lack of ambition"]
+      },
+      "situational_tags": ["career", "education", "money", "creativity", "health"]
+    },
+    {
+      "id": "pentacles_9",
+      "name": "Nine of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 9,
+      "archetype": "The Lady of Leisure",
+      "keywords": {
+        "upright": ["luxury", "self-sufficiency", "financial independence", "accomplishment", "refinement"],
+        "reversed": ["over-investment", "superficiality", "hustling", "materialism", "lack of independence"]
+      },
+      "situational_tags": ["money", "career", "home", "health", "creativity"]
+    },
+    {
+      "id": "pentacles_10",
+      "name": "Ten of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 10,
+      "archetype": "The Dynasty",
+      "keywords": {
+        "upright": ["legacy", "inheritance", "family wealth", "establishment", "tradition"],
+        "reversed": ["family disputes", "bankruptcy", "loss of legacy", "debt", "instability"]
+      },
+      "situational_tags": ["family", "money", "home", "legal", "career"]
+    },
+    {
+      "id": "pentacles_page",
+      "name": "Page of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 11,
+      "archetype": "The Student",
+      "keywords": {
+        "upright": ["manifestation", "financial opportunity", "new skill", "ambition", "desire"],
+        "reversed": ["lack of progress", "procrastination", "unrealistic goals", "wastefulness", "laziness"]
+      },
+      "situational_tags": ["education", "career", "money", "creativity", "change"]
+    },
+    {
+      "id": "pentacles_knight",
+      "name": "Knight of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 12,
+      "archetype": "The Guardian",
+      "keywords": {
+        "upright": ["efficiency", "routine", "conservatism", "methodical", "hard-working"],
+        "reversed": ["laziness", "boredom", "stubbornness", "obsessive", "stuck"]
+      },
+      "situational_tags": ["career", "money", "home", "health", "education"]
+    },
+    {
+      "id": "pentacles_queen",
+      "name": "Queen of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 13,
+      "archetype": "The Nurturer",
+      "keywords": {
+        "upright": ["nurturing", "practicality", "providing", "security", "abundance"],
+        "reversed": ["imbalance", "self-care neglect", "smothering", "jealousy", "materialism"]
+      },
+      "situational_tags": ["home", "family", "money", "health", "career"]
+    },
+    {
+      "id": "pentacles_king",
+      "name": "King of Pentacles",
+      "arcana": "minor",
+      "suit": "pentacles",
+      "number": 14,
+      "archetype": "The Provider",
+      "keywords": {
+        "upright": ["wealth", "security", "leadership", "discipline", "abundance"],
+        "reversed": ["greed", "materialism", "poor financial decisions", "stubbornness", "possessiveness"]
+      },
+      "situational_tags": ["money", "career", "family", "legal", "home"]
+    }
+  ]
+}

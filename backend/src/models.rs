@@ -37,3 +37,12 @@ pub struct DrawResponse {
     pub cards: Vec<DrawnCard>,
     pub interpretation_prompt: String, // The prompt sent to AI (for debugging/transparency)
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Message {
+    pub id: i64,
+    pub reading_id: i64,
+    pub role: String,
+    pub content: String,
+    pub created_at: String,
+}
